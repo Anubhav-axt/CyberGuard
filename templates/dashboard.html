@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-8 text-neon-cyan">Dashboard</h1>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+    <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6 text-center">
+        <div class="text-3xl font-bold text-neon-cyan">{{ data.total_checks }}</div>
+        <div class="text-gray-400 text-sm mt-1">Passwords Checked</div>
+    </div>
+    <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6 text-center">
+        <div class="text-3xl font-bold text-neon-green">{{ data.total_generated }}</div>
+        <div class="text-gray-400 text-sm mt-1">Passwords Generated</div>
+    </div>
+    <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6 text-center">
+        <div class="text-3xl font-bold text-neon-purple">{{ data.total_hashes }}</div>
+        <div class="text-gray-400 text-sm mt-1">Hashes Computed</div>
+    </div>
+    <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6 text-center">
+        <div class="text-3xl font-bold text-neon-red">{{ data.total_scans }}</div>
+        <div class="text-gray-400 text-sm mt-1">Ports Scanned</div>
+    </div>
+</div>
+<h2 class="text-xl font-bold mb-4 text-gray-300">Quick Actions</h2>
+<div class="grid md:grid-cols-3 gap-4">
+    <a href="/password" class="bg-cyber-panel border border-cyber-border rounded-xl p-5 hover:border-neon-cyan transition text-center">
+        <div class="text-neon-cyan text-2xl mb-2">&#128272;</div>
+        <div class="font-semibold">Check Password</div>
+    </a>
+    <a href="/generator" class="bg-cyber-panel border border-cyber-border rounded-xl p-5 hover:border-neon-green transition text-center">
+        <div class="text-neon-green text-2xl mb-2">&#9889;</div>
+        <div class="font-semibold">Generate Password</div>
+    </a>
+    <a href="/scanner" class="bg-cyber-panel border border-cyber-border rounded-xl p-5 hover:border-neon-purple transition text-center">
+        <div class="text-neon-purple text-2xl mb-2">&#128225;</div>
+        <div class="font-semibold">Scan Ports</div>
+    </a>
+</div>
+{% endblock %}

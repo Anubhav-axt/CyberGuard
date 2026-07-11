@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Port Scanner{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-8 text-neon-cyan">Port Scanner</h1>
+<div class="max-w-xl">
+    <form id="scanner-form" class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+        <label class="block text-sm text-gray-400 mb-2">Target Host</label>
+        <input type="text" name="target" required
+            class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-gray-100 focus:border-neon-cyan focus:outline-none transition"
+            placeholder="IP address or hostname">
+        <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+                <label class="block text-sm text-gray-400 mb-2">Start Port</label>
+                <input type="number" name="start_port" value="1" min="1" max="65535"
+                    class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-gray-100 focus:border-neon-cyan focus:outline-none transition">
+            </div>
+            <div>
+                <label class="block text-sm text-gray-400 mb-2">End Port</label>
+                <input type="number" name="end_port" value="1024" min="1" max="65535"
+                    class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-gray-100 focus:border-neon-cyan focus:outline-none transition">
+            </div>
+        </div>
+        <button type="submit" class="mt-6 bg-neon-cyan text-cyber-dark font-bold px-6 py-3 rounded-lg hover:bg-neon-cyan/80 transition w-full">Scan</button>
+    </form>
+    <div id="result" class="mt-6 hidden">
+        <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+            <h3 class="text-lg font-bold mb-3">Open Ports</h3>
+            <div id="result-content" class="text-sm"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Hash Generator{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-8 text-neon-purple">Hash Generator</h1>
+<div class="max-w-2xl">
+    <form id="hash-form" class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+        <label class="block text-sm text-gray-400 mb-2">Input Text</label>
+        <textarea name="text" id="hash-input" rows="5" required
+            class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-gray-100 focus:border-neon-purple focus:outline-none transition font-mono"
+            placeholder="Enter text to hash..."></textarea>
+        <label class="block text-sm text-gray-400 mt-4 mb-2">Algorithm</label>
+        <select name="algorithm" id="algorithm-select"
+            class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-gray-100 focus:border-neon-purple focus:outline-none transition">
+            <option value="md5">MD5</option>
+            <option value="sha1">SHA-1</option>
+            <option value="sha256" selected>SHA-256</option>
+            <option value="sha512">SHA-512</option>
+        </select>
+        <button type="submit" class="mt-6 bg-neon-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-neon-purple/80 transition w-full">Generate Hash</button>
+    </form>
+    <div id="result" class="mt-6 hidden">
+        <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+            <h3 class="text-lg font-bold mb-3">Hash Output</h3>
+            <div id="result-content" class="bg-cyber-dark rounded-lg p-4 text-neon-purple font-mono text-sm break-all select-all"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

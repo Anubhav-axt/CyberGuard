@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Phishing Detector{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-8 text-neon-red">Phishing Detector</h1>
+<div class="max-w-xl">
+    <form id="phishing-form" class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+        <label class="block text-sm text-gray-400 mb-2">Enter URL</label>
+        <input type="url" name="url" id="url-input" required
+            class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-gray-100 focus:border-neon-red focus:outline-none transition"
+            placeholder="https://example.com">
+        <button type="submit" class="mt-4 bg-neon-red text-white font-bold px-6 py-3 rounded-lg hover:bg-neon-red/80 transition w-full">Check URL</button>
+    </form>
+    <div id="result" class="mt-6 hidden">
+        <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+            <h3 class="text-lg font-bold mb-3">Analysis</h3>
+            <div id="result-content"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

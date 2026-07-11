@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Password Generator{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-8 text-neon-green">Password Generator</h1>
+<div class="max-w-xl">
+    <form id="generator-form" class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+        <label class="block text-sm text-gray-400 mb-2">Length: <span id="length-val">16</span></label>
+        <input type="range" name="length" id="length-slider" min="8" max="128" value="16"
+            class="w-full accent-green-400" oninput="document.getElementById('length-val').textContent=this.value">
+        <div class="grid grid-cols-2 gap-3 mt-4">
+            <label class="flex items-center gap-2 text-sm text-gray-300">
+                <input type="checkbox" name="uppercase" checked class="accent-green-400"> Uppercase (A-Z)
+            </label>
+            <label class="flex items-center gap-2 text-sm text-gray-300">
+                <input type="checkbox" name="lowercase" checked class="accent-green-400"> Lowercase (a-z)
+            </label>
+            <label class="flex items-center gap-2 text-sm text-gray-300">
+                <input type="checkbox" name="digits" checked class="accent-green-400"> Digits (0-9)
+            </label>
+            <label class="flex items-center gap-2 text-sm text-gray-300">
+                <input type="checkbox" name="symbols" checked class="accent-green-400"> Symbols (!@#$)
+            </label>
+        </div>
+        <button type="submit" class="mt-6 bg-neon-green text-cyber-dark font-bold px-6 py-3 rounded-lg hover:bg-neon-green/80 transition w-full">Generate</button>
+    </form>
+    <div id="result" class="mt-6 hidden">
+        <div class="bg-cyber-panel border border-cyber-border rounded-xl p-6">
+            <h3 class="text-lg font-bold mb-3">Generated Password</h3>
+            <div id="result-content" class="bg-cyber-dark rounded-lg p-4 text-neon-green font-mono text-lg break-all select-all"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

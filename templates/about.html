@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-8 text-neon-cyan">About CyberGuard</h1>
+<div class="bg-cyber-panel border border-cyber-border rounded-xl p-8 max-w-3xl">
+    <p class="text-gray-300 leading-relaxed mb-6">
+        <span class="text-neon-cyan font-bold">CyberGuard</span> is an open-source cybersecurity toolkit designed for developers,
+        security researchers, and anyone who wants to strengthen their digital security posture.
+    </p>
+    <h2 class="text-xl font-bold text-neon-green mb-3">Modules</h2>
+    <ul class="text-gray-400 space-y-2 mb-6">
+        <li class="flex items-start gap-2"><span class="text-neon-cyan">&#9656;</span> <strong class="text-gray-200">Password Checker</strong> &mdash; Evaluate password strength using entropy, length, and character diversity analysis.</li>
+        <li class="flex items-start gap-2"><span class="text-neon-green">&#9656;</span> <strong class="text-gray-200">Password Generator</strong> &mdash; Create secure random passwords with configurable length and character sets.</li>
+        <li class="flex items-start gap-2"><span class="text-neon-purple">&#9656;</span> <strong class="text-gray-200">Hash Generator</strong> &mdash; Compute cryptographic hashes using MD5, SHA-1, SHA-256, and SHA-512 algorithms.</li>
+        <li class="flex items-start gap-2"><span class="text-neon-cyan">&#9656;</span> <strong class="text-gray-200">Port Scanner</strong> &mdash; Discover open ports on target hosts to identify accessible services.</li>
+        <li class="flex items-start gap-2"><span class="text-neon-red">&#9656;</span> <strong class="text-gray-200">Phishing Detector</strong> &mdash; Analyze URLs for suspicious patterns, typosquatting, and known phishing indicators.</li>
+    </ul>
+    <h2 class="text-xl font-bold text-neon-green mb-3">Tech Stack</h2>
+    <p class="text-gray-400 mb-6">Built with Python, Flask, Jinja2, and Tailwind CSS. Designed with a sleek dark cybersecurity aesthetic.</p>
+    <h2 class="text-xl font-bold text-neon-green mb-3">Disclaimer</h2>
+    <p class="text-gray-500 text-sm">
+        This tool is for educational and authorized security testing purposes only. Always obtain proper authorization before scanning networks or testing systems you do not own.
+    </p>
+</div>
+{% endblock %}

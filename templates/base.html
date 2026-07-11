@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard - {% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: { dark: '#0a0e17', panel: '#111827', border: '#1e293b' },
+                        neon: { cyan: '#00f0ff', green: '#00ff88', purple: '#a855f7', red: '#ff3366' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="dark bg-cyber-dark text-gray-100 min-h-screen font-mono">
+    <nav class="bg-cyber-panel border-b border-cyber-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold text-neon-cyan tracking-widest">CYBERGUARD</a>
+            <div class="hidden md:flex space-x-1">
+                <a href="/" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">Home</a>
+                <a href="/dashboard" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">Dashboard</a>
+                <a href="/password" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">Password</a>
+                <a href="/generator" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">Generator</a>
+                <a href="/hash" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">Hash</a>
+                <a href="/scanner" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">Scanner</a>
+                <a href="/phishing" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">Phishing</a>
+                <a href="/about" class="px-3 py-2 rounded hover:bg-cyber-border hover:text-neon-cyan transition">About</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-neon-cyan text-2xl">&#9776;</button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-cyber-border px-4 pb-3">
+            <a href="/" class="block py-2 hover:text-neon-cyan">Home</a>
+            <a href="/dashboard" class="block py-2 hover:text-neon-cyan">Dashboard</a>
+            <a href="/password" class="block py-2 hover:text-neon-cyan">Password</a>
+            <a href="/generator" class="block py-2 hover:text-neon-cyan">Generator</a>
+            <a href="/hash" class="block py-2 hover:text-neon-cyan">Hash</a>
+            <a href="/scanner" class="block py-2 hover:text-neon-cyan">Scanner</a>
+            <a href="/phishing" class="block py-2 hover:text-neon-cyan">Phishing</a>
+            <a href="/about" class="block py-2 hover:text-neon-cyan">About</a>
+        </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="border-t border-cyber-border text-center py-4 text-gray-500 text-sm">
+        CyberGuard &copy; 2026 &mdash; Securing the Digital Frontier
+    </footer>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
